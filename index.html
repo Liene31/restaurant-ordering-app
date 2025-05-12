@@ -15,37 +15,44 @@
     <title>Jimmy's Diner</title>
   </head>
   <body>
-    <div class="container">
+    <div class="page-wrapper">
       <header>
         <h1>Jimmy's Diner</h1>
         <h2>The best burgers and pizzas in town.</h2>
       </header>
-      <main>
-        <section class="menu-section">
-          <img
-            class="menu-item-img"
-            src="Images/pizza.png"
-            alt="image of pizza"
-          />
-          <h3 class="menu-item-title"></h3>
-          <p class="menu-item-ingredients"></p>
-          <p class="menu-item-price">$14</p>
-          <button class="menu-item-add-btn">+</button>
-        </section>
-        <section class="order-section">
-          <h3>Your Order</h3>
-          <div class="order-item">
-            <p class="order-item-name">Pizza</p>
-            <button class="order-item-remove-btn">remove</button>
-            <p class="order-item-price">$14</p>
-          </div>
-          <div class="total-price">
-            <p>Total Price:</p>
-            <p class="order-total-price">$26</p>
-          </div>
-          <button class="order-complete-btn">Complete order</button>
-        </section>
-      </main>
+      <div class="content-area">
+        <main>
+          <section class="menu-section">
+            <img
+              class="menu-item-img"
+              src="Images/pizza.png"
+              alt="image of pizza"
+            />
+            <div class="menu-item-details">
+              <h3 class="menu-item-title">Pizza</h3>
+              <p class="menu-item-ingredients">
+                pepperoni, mushroom, mozarella
+              </p>
+              <p class="menu-item-price">$14</p>
+            </div>
+            <button class="menu-item-add-btn">+</button>
+          </section>
+
+          <section class="order-section">
+            <h3>Your Order</h3>
+            <div class="order-item">
+              <p class="order-item-name">Pizza</p>
+              <button class="order-item-remove-btn">remove</button>
+              <p class="order-item-price">$14</p>
+            </div>
+            <div class="total-price">
+              <p>Total Price:</p>
+              <p class="order-total-price">$26</p>
+            </div>
+            <button class="order-complete-btn">Complete order</button>
+          </section>
+        </main>
+      </div>
     </div>
   </body>
 </html>

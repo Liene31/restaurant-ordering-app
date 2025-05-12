@@ -4,22 +4,67 @@ body {
   font-family: "Smythe", system-ui;
 }
 
-.container {
+.page-wrapper {
   margin: 0 auto;
   max-width: 600px;
 }
 
+.content-area {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 /* Typography */
 
+h1,
+h2 {
+  margin: 0;
+  font-weight: normal;
+}
+
 h1 {
+  font-size: 2.4rem;
+  padding: 20px 0 0 25px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  padding-left: 25px;
+}
+
+h3,
+p {
   margin: 0;
 }
+
+.menu-item-ingredients {
+  padding: 10px 0;
+}
+
+/* Sections */
 
 header {
   background-image: url(Images/header.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: auto;
-  aspect-ratio: 600 / 167;
+  height: 167px;
+  color: #ffffff;
+}
+
+.menu-section {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  gap: 15px;
+
+  padding: 40px 0;
+}
+
+.menu-item-img {
+  width: 80px;
+}
+
+.menu-item-add-btn {
+  margin-left: auto;
 }
