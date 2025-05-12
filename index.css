@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Smythe", system-ui;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Typography */
+
+h1 {
+  margin: 0;
+}
+
+header {
+  background-image: url(Images/header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 167;
+}
