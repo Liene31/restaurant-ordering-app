@@ -38,11 +38,12 @@ p {
   margin: 0;
 }
 
-.menu-item-ingredients {
-  padding: 10px 0;
+h3 {
+  font-weight: normal;
+  font-size: 1.1rem;
 }
 
-/* Sections */
+/* Header */
 
 header {
   background-image: url(Images/header.png);
@@ -53,19 +54,100 @@ header {
   color: #ffffff;
 }
 
+/* Menu */
+
 .menu-section {
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid #ccc;
   gap: 15px;
-
   padding: 40px 0;
 }
 
 .menu-item-img {
-  width: 80px;
+  width: 75px;
 }
+
+.menu-item-ingredients {
+  padding: 10px 0;
+  font-size: 0.8rem;
+  color: #d2d2d2;
+}
+
+.menu-item-price {
+  font-size: 1rem;
+}
+
+/* Order */
+
+.order-title {
+  text-align: center;
+  padding: 30px 0 50px 0;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.order-item-name {
+  font-size: 1.1rem;
+}
+
+.order-item-price {
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.total-price-section {
+  display: flex;
+  align-items: center;
+  border-top: 1.5px solid #393333;
+}
+
+.order-total-price-title {
+  font-size: 1.2rem;
+}
+
+.order-total-price {
+  margin-left: auto;
+  padding: 10px 0;
+}
+
+/* Buttons */
 
 .menu-item-add-btn {
   margin-left: auto;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #dedede;
+  color: #3c3c3c;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.order-item-remove-btn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 0.6rem;
+  color: #d2d2d2;
+}
+
+.order-complete-btn {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px 0;
+  background-color: #16db99;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
 }
