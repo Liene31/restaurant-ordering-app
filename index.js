@@ -8,15 +8,25 @@ function handleClicks(e) {
   }
 }
 
+// Handles the item add button, when clicked, adds to Order
+
 function handleMenuAddBtn(id) {
   const orderItemInner = document.getElementById("order-item-inner");
-  //   let orderedItems = "";
-  const menuItemObject = menuArray.filter(function (menuItem) {
-    return menuItem.id === Number(id);
+  const orderSection = document.getElementById("order-section");
+
+  const menuItem = menuArray.filter((item) => {
+    return item.id === Number(id);
   })[0];
 
-  console.log(menuItemObject);
-  document.getElementById("order-section").style.display = "block";
+  const orderedItems = `
+    <div class="order-item">
+        <p class="order-item-name">${menuItem.name}</p>
+        <button class="order-item-remove-btn">remove</button>
+        <p class="order-item-price">$${menuItem.price}</p>
+    </div>
+`;
+  orderSection.style.display = "block";
+  orderItemInner.innerHTML += orderedItems;
 }
 
 // Get Items from Array and Render in HTML
@@ -50,11 +60,3 @@ function renderMenuItems() {
 }
 
 renderMenuItems();
-
-// orderedItems += `
-// <div class="order-item">
-//     <p class="order-item-name">${menuItemObject.name}</p>
-//     <button class="order-item-remove-btn">remove</button>
-//     <p class="order-item-price">$${menuItemObject.price}</p>
-//   </div>
-// `;
