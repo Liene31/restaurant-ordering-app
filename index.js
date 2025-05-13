@@ -1,5 +1,6 @@
 import { menuArray } from "/data.js";
 
+const priceArray = [];
 document.getElementById("page-wrapper").addEventListener("click", handleClicks);
 
 function handleClicks(e) {
@@ -27,6 +28,18 @@ function handleMenuAddBtn(id) {
 `;
   orderSection.style.display = "block";
   orderItemInner.innerHTML += orderedItems;
+
+  getOrderTotal(menuItem.price);
+}
+
+function getOrderTotal(price) {
+  const orderTotal = document.getElementById("order-total");
+  priceArray.push(price);
+  const totalOfOrder = priceArray.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+
+  orderTotal.innerHTML = `$${totalOfOrder}`;
 }
 
 // Get Items from Array and Render in HTML
