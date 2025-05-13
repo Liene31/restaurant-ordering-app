@@ -1,6 +1,8 @@
 import { menuArray } from "/data.js";
 
 const priceArray = [];
+const orderedItems = [];
+
 document.getElementById("page-wrapper").addEventListener("click", handleClicks);
 
 function handleClicks(e) {
@@ -9,27 +11,36 @@ function handleClicks(e) {
   }
 }
 
-// Handles the item add button, when clicked, adds to Order
+// Handles the item add button
 
 function handleMenuAddBtn(id) {
-  const orderItemInner = document.getElementById("order-item-inner");
   const orderSection = document.getElementById("order-section");
 
   const menuItem = menuArray.filter((item) => {
     return item.id === Number(id);
   })[0];
 
-  const orderedItems = `
-    <div class="order-item">
-        <p class="order-item-name">${menuItem.name}</p>
-        <button class="order-item-remove-btn">remove</button>
-        <p class="order-item-price">$${menuItem.price}</p>
-    </div>
-`;
   orderSection.style.display = "block";
-  orderItemInner.innerHTML += orderedItems;
+  orderedItems.push(menuItem);
 
+  renderOrderedItems();
   getOrderTotal(menuItem.price);
+}
+
+function renderOrderedItems() {
+  const orderItemInner = document.getElementById("order-item-inner");
+
+  orderItemInner.innerHTML = orderedItems
+    .map(function (item) {
+      return `
+      <div class="order-item">
+          <p class="order-item-name">${item.name}</p>
+          <button class="order-item-remove-btn">remove</button>
+          <p class="order-item-price">$${item.price}</p>
+      </div>
+      `;
+    })
+    .join("");
 }
 
 function getOrderTotal(price) {
