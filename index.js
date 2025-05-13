@@ -7,6 +7,8 @@ document.getElementById("page-wrapper").addEventListener("click", handleClicks);
 function handleClicks(e) {
   if (e.target.dataset.btn) {
     handleMenuAddBtn(e.target.dataset.btn);
+  } else if (e.target.dataset.remove) {
+    handleRemoveBtn(e.target.dataset.remove);
   }
 }
 
@@ -26,6 +28,21 @@ function handleMenuAddBtn(id) {
   getOrderTotal();
 }
 
+function handleRemoveBtn(id) {
+  console.log(orderedItems);
+  const selectedItemToRemove = orderedItems.find(function (item) {
+    return item.id === Number(id);
+  });
+
+  const index = orderedItems.findIndex(function (item) {
+    return item.id === Number(id);
+  });
+
+  console.log(index);
+
+  console.log(selectedItemToRemove);
+}
+
 function renderOrderedItems() {
   const orderItemInner = document.getElementById("order-item-inner");
 
@@ -34,7 +51,7 @@ function renderOrderedItems() {
       return `
       <div class="order-item">
           <p class="order-item-name">${item.name}</p>
-          <button class="order-item-remove-btn">remove</button>
+          <button class="order-item-remove-btn" data-remove="${item.id}">remove</button>
           <p class="order-item-price">$${item.price}</p>
       </div>
       `;
