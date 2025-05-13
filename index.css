@@ -144,7 +144,7 @@ header {
 .order-complete-btn {
   display: block;
   width: 100%;
-  margin-top: 25px;
+  margin: 25px 0;
   padding: 15px 0;
   background-color: #16db99;
   border: none;

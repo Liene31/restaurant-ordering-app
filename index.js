@@ -1,5 +1,26 @@
 import { menuArray } from "/data.js";
 
+document.getElementById("page-wrapper").addEventListener("click", handleClicks);
+
+function handleClicks(e) {
+  if (e.target.dataset.btn) {
+    handleMenuAddBtn(e.target.dataset.btn);
+  }
+}
+
+function handleMenuAddBtn(id) {
+  const orderItemInner = document.getElementById("order-item-inner");
+  //   let orderedItems = "";
+  const menuItemObject = menuArray.filter(function (menuItem) {
+    return menuItem.id === Number(id);
+  })[0];
+
+  console.log(menuItemObject);
+  document.getElementById("order-section").style.display = "block";
+}
+
+// Get Items from Array and Render in HTML
+
 function getMenuItems() {
   return menuArray
     .map((item) => {
@@ -17,15 +38,23 @@ function getMenuItems() {
               </p>
               <p class="menu-item-price">$${item.price}</p>
             </div>
-            <button class="menu-item-add-btn">+</button>
+            <button class="menu-item-add-btn" data-btn="${item.id}">+</button>
         </div>   
         `;
     })
     .join("");
 }
 
-function render() {
+function renderMenuItems() {
   document.getElementById("menu-section").innerHTML = getMenuItems();
 }
 
-render();
+renderMenuItems();
+
+// orderedItems += `
+// <div class="order-item">
+//     <p class="order-item-name">${menuItemObject.name}</p>
+//     <button class="order-item-remove-btn">remove</button>
+//     <p class="order-item-price">$${menuItemObject.price}</p>
+//   </div>
+// `;

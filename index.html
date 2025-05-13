@@ -15,45 +15,33 @@
     <title>Jimmy's Diner</title>
   </head>
   <body>
-    <div class="page-wrapper">
+    <div class="page-wrapper" id="page-wrapper">
       <header>
         <h1>Jimmy's Diner</h1>
         <h2>The best burgers and pizzas in town.</h2>
       </header>
       <div class="content-area">
         <main>
-          <section class="menu-section" id="menu-section">
-            <div class="menu-item">
-              <img
-                class="menu-item-img"
-                src="images/pizza.png"
-                alt="image of pizza"
-              />
-              <div class="menu-item-details">
-                <h3 class="menu-item-title">Pizza</h3>
-                <p class="menu-item-ingredients">
-                  pepperoni, mushroom, mozarella
-                </p>
-                <p class="menu-item-price">$14</p>
-              </div>
-              <button class="menu-item-add-btn">+</button>
-            </div>
-          </section>
+          <section class="menu-section" id="menu-section"></section>
 
-          <section class="order-section">
+          <section class="order-section" id="order-section">
             <h3 class="order-title">Your Order</h3>
 
-            <div class="order-item">
-              <p class="order-item-name">Pizza</p>
-              <button class="order-item-remove-btn">remove</button>
-              <p class="order-item-price">$14</p>
+            <div id="order-item-inner">
+              <div class="order-item">
+                <p class="order-item-name">Pizza</p>
+                <button class="order-item-remove-btn">remove</button>
+                <p class="order-item-price">$14</p>
+              </div>
             </div>
 
             <div class="total-price-section">
               <p class="order-total-price-title">Total Price:</p>
               <p class="order-total-price">$26</p>
             </div>
-            <button class="order-complete-btn">Complete order</button>
+            <button class="order-complete-btn" id="order-complete-btn">
+              Complete order
+            </button>
           </section>
         </main>
       </div>
