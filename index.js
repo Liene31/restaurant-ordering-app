@@ -1,6 +1,5 @@
 import { menuArray } from "/data.js";
 
-const priceArray = [];
 const orderedItems = [];
 
 document.getElementById("page-wrapper").addEventListener("click", handleClicks);
@@ -24,14 +23,14 @@ function handleMenuAddBtn(id) {
   orderedItems.push(menuItem);
 
   renderOrderedItems();
-  getOrderTotal(menuItem.price);
+  getOrderTotal();
 }
 
 function renderOrderedItems() {
   const orderItemInner = document.getElementById("order-item-inner");
 
   orderItemInner.innerHTML = orderedItems
-    .map(function (item) {
+    .map((item) => {
       return `
       <div class="order-item">
           <p class="order-item-name">${item.name}</p>
@@ -43,12 +42,12 @@ function renderOrderedItems() {
     .join("");
 }
 
-function getOrderTotal(price) {
+function getOrderTotal() {
   const orderTotal = document.getElementById("order-total");
-  priceArray.push(price);
-  const totalOfOrder = priceArray.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  });
+
+  const totalOfOrder = orderedItems.reduce((accumulator, item) => {
+    return accumulator + item.price;
+  }, 0);
 
   orderTotal.innerHTML = `$${totalOfOrder}`;
 }
