@@ -1,7 +1,6 @@
 import { menuArray } from "/data.js";
 
 let orderedItems = [];
-console.log(orderedItems);
 
 document.getElementById("page-wrapper").addEventListener("click", handleClicks);
 
@@ -16,13 +15,10 @@ function handleClicks(e) {
 // Handles the item add button
 
 function handleMenuAddBtn(id) {
-  const orderSection = document.getElementById("order-section");
-
   const menuItem = menuArray.filter((item) => {
     return item.id === id;
   })[0];
 
-  orderSection.style.display = "block";
   orderedItems.push(menuItem);
 
   renderOrderedItems();
@@ -36,20 +32,30 @@ function handleRemoveBtn(index) {
   getOrderTotal();
 }
 
+// Render section of ordered items
+
 function renderOrderedItems() {
   const orderItemInner = document.getElementById("order-item-inner");
+  const orderSection = document.getElementById("order-section");
 
-  orderItemInner.innerHTML = orderedItems
-    .map((item, index) => {
-      return `
+  if (orderedItems.length) {
+    orderItemInner.innerHTML = orderedItems
+      .map((item, index) => {
+        return `
       <div class="order-item">
           <p class="order-item-name">${item.name}</p>
           <button class="order-item-remove-btn" data-index="${index}">remove</button>
           <p class="order-item-price">$${item.price}</p>
       </div>
       `;
-    })
-    .join("");
+      })
+      .join("");
+
+    orderSection.style.display = "block";
+  } else {
+    orderItemInner.innerHTML = "";
+    orderSection.style.display = "none";
+  }
 }
 
 function getOrderTotal() {
