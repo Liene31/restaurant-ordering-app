@@ -37,6 +37,8 @@
               Complete order
             </button>
           </section>
+
+          <section class="order-confirmation" id="order-confirmation"></section>
         </main>
       </div>
 
@@ -44,17 +46,33 @@
         <div class="inner-modal" id="inner-modal">
           <h4>Enter card details</h4>
           <form class="payment-form">
-            <input type="text" placeholder="Enter your name" required />
-            <input type="number" placeholder="Enter card number" required />
+            <input
+              type="text"
+              placeholder="Enter your name"
+              id="name-input"
+              required
+            />
+            <input
+              type="number"
+              placeholder="Enter card number"
+              id="input-card-number"
+            />
             <input
               type="text"
               placeholder="Enter CVV"
               minlength="3"
               maxlength="3"
               pattern="^[0-9]{3}$"
+              id="input-cvv-number"
               required
             />
-            <button class="payment-form-btn" id="payment-form-btn">Pay</button>
+            <button
+              class="payment-form-btn"
+              id="payment-form-btn"
+              type="submit"
+            >
+              Pay
+            </button>
           </form>
         </div>
       </section>
