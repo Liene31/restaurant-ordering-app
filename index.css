@@ -209,11 +209,11 @@ input {
 /* Order Confirmation section */
 
 .order-confirmation-inner {
-  display: block;
   background-color: #ecfdf5;
   padding: 30px;
-  margin: 30px 0;
+  margin: 30px auto;
   text-align: center;
-  font-size: 1.3rem;
-  columns: #065f46;
+  font-size: 1.5rem;
+  color: #065f46;
+  border-radius: 3px;
 }
