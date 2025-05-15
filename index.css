@@ -181,7 +181,7 @@ header {
 /* Modal */
 
 .inner-modal {
-  display: block;
+  display: none;
   position: fixed;
   margin: auto;
   width: 350px;

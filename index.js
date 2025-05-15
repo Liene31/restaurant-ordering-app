@@ -9,6 +9,8 @@ function handleClicks(e) {
     handleMenuAddBtn(Number(e.target.dataset.btn));
   } else if (e.target.dataset.index) {
     handleRemoveBtn(Number(e.target.dataset.index));
+  } else if (e.target.id === "order-complete-btn") {
+    handleOrderCompleteBtn();
   }
 }
 
@@ -30,6 +32,11 @@ function handleRemoveBtn(index) {
 
   renderOrderedItems();
   getOrderTotal();
+}
+
+function handleOrderCompleteBtn() {
+  const innerModal = document.getElementById("inner-modal");
+  innerModal.style.display = "block";
 }
 
 // Render section of ordered items
